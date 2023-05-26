@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/registerstyle.css" th:href="@{../static/css/registerstyle.css}"/>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"> </script>
+    <script>
+        function mydata() {
+            var love="";
+            var name = $('#name').val();
+            var password01 = $('#password01').val();
+            var password02 = $('#password02').val();
+            var sex = $("input[name='sex']:checked").val();
+            var nativeplace = $('#native').val();
+            var hobby = $("input[name='hobby']");
+            for(i in hobby) {
+                if(hobby[i].checked) {
+                    love +=hobby[i].value
+                }
+            }
+            if (password01 == password02)
+            {
+                alert("两次密码一致！")
+                //$.post("/goregister",{name:name,password01:password01})
+                $.post("/goregister", {username: name, password: password01, sex: sex, np:nativeplace, love: love}, function (result){
+                    if (result == true) {
+                        alert("注册成功!")
+                        window.location.href = "/Login"
+                    }else {
+                        alert("注册失败,改用户名已存在!")
+                    }
+                    // alert("注册成功!")
+                    // window.location.href = "/Login"
+                })
+            }
+            else
+            {
+                alert("两次密码不一致！")
+            }
+
+            //alert("用户名："+name+"密码："+password+"性别："+sex+"籍贯：" + nativeplace + "爱好：" +love);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="login">
+        <form action="/goregister" method="post">
+            <div class="logform">用户登录</div>
+
+            <div class="logleft">用户名</div><div class="logright"><input type="text" id="name" name="name"></div>
+            <div class="logleft">密码</div><div class="logright"><input type="password" id="password01" name="password"></div>
+            <div class="logleft">确认密码</div><div class="logright"><input type="password" id="password02"></div>
+            <div class="logleft">性别</div><div class="logright">
+            <input type="radio" id="male" name="sex" value="男" checked="checked">男
+            <input type="radio" id="female" name="sex" value="女">女
+        </div>
+            <div class="logleft">籍贯</div><div class="logright">
+            <select name="nativeplace" id="native">
+                <option value="">请选择</option>
+                <option value="江苏">江苏</option>
+                <option value="浙江">浙江</option>
+                <option value="安徽">安徽</option>
+            </select>
+        </div>
+            <div class="logleft">爱好</div><div class="logright">
+            <input type="checkbox" value="上网" name="hobby">上网
+            <input type="checkbox" value="学习" name="hobby">学习
+            <input type="checkbox" value="唱歌" name="hobby" checked="checked">唱歌
+        </div>
+            <div class="logleft"></div><div class="logright">
+            <input type="submit" value="注册" onclick="mydata()">
+            <input type="reset" value="重置">
+<!--            <a href="register">注册</a>-->
+        </div>
+        </form>
+    </div>
+</body>
+</html>

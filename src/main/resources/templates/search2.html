@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="publicpage(title ='首页')">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+<!--  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">-->
+<!--  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/mhDoLbDldZc3qpsJHpLogda//BVZbgYuw6kof4u2FrCedxOtgRZDTHgHUhOCVim" crossorigin="anonymous"></script>-->
+</head>
+<body>
+<div th:fragment="public_right">
+  <table class="table table-hover" style="width:80%" id="public_right">
+    <tr>
+      <td>编号</td>
+      <td>内容</td>
+      <td>时间</td>
+    </tr>
+    <tr th:each="i:${#numbers.sequence(1,10)}">
+      <td th:text="${i}"></td>
+      <td th:text="${new java.util.Date().getTime()}"></td>
+      <td th:text="${#dates.format(new java.util.Date().getTime(),'yyy-MM-dd hh:mm:ss')}"></td>
+    </tr>
+  </table>
+</div>
+<!--3030213314李贺，登录 成功 ！！-->
+<div ></div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="publicpage4(title ='首页')">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <!--  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">-->
+  <!--  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/mhDoLbDldZc3qpsJHpLogda//BVZbgYuw6kof4u2FrCedxOtgRZDTHgHUhOCVim" crossorigin="anonymous"></script>-->
+</head>
+<body>
+<div th:fragment="public_right">
+<!--  <table class="table table-hover" style="width:80%" id="public_right">-->
+<!--    &lt;!&ndash;    <tr>&ndash;&gt;-->
+<!--    &lt;!&ndash;      <td>编号</td>&ndash;&gt;-->
+<!--    &lt;!&ndash;      <td>内容</td>&ndash;&gt;-->
+<!--    &lt;!&ndash;      <td>时间</td>&ndash;&gt;-->
+<!--    &lt;!&ndash;    </tr>&ndash;&gt;-->
+<!--    &lt;!&ndash;    <tr th:each="i:${#numbers.sequence(1,10)}">&ndash;&gt;-->
+<!--    &lt;!&ndash;      <td th:text="${i}"></td>&ndash;&gt;-->
+<!--    &lt;!&ndash;      <td th:text="${new java.util.Date().getTime()}"></td>&ndash;&gt;-->
+<!--    &lt;!&ndash;      <td th:text="${#dates.format(new java.util.Date().getTime(),'yyy-MM-dd hh:mm:ss')}"></td>&ndash;&gt;-->
+<!--    &lt;!&ndash;    </tr>&ndash;&gt;-->
+<!--    <tr>-->
+<!--      <td>编号</td>-->
+<!--      <td>用户名</td>-->
+<!--      <td>密码</td>-->
+<!--      <td>籍贯</td>-->
+<!--      <td>爱好</td>-->
+<!--      <td>操作</td>-->
+<!--    </tr>-->
+<!--    <tr th:each="User:${Result}">-->
+<!--      <td th:text="${User.id}"></td>-->
+<!--      <td th:text="${User.username}"></td>-->
+<!--      <td th:text="${User.password}"></td>-->
+<!--      <td th:text="${User.nativeplace}"></td>-->
+<!--      <td th:text="${User.hobby}"></td>-->
+<!--      <td>-->
+<!--        <a th:href="@{'/deleteuserinfo/'+ ${User.id}}">删除</a>-->
+<!--      </td>-->
+<!--    </tr>-->
+<!--  </table>-->
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"> </script>
+  <script>
+    function updateData() {
+      var love="";
+      var id = $('#id').val();
+      var name = $('#name').val();
+      var password01 = $('#password01').val();
+      var password02 = $('#password02').val();
+      var sex = $("input[name='sex']:checked").val();
+      var nativeplace = $('#native').val();
+      var hobby = $("input[name='hobby']");
+      for(i in hobby) {
+        if(hobby[i].checked) {
+          love +=hobby[i].value
+        }
+      }
+      if (password01 == password02)
+      {
+        alert("两次密码一致！")
+        //$.post("/goregister",{name:name,password01:password01})
+        $.post("/update", {id: id, username: name, password: password01, sex: sex, np:nativeplace, love: love}, function (result){
+          if (result == true) {
+            alert("修改成功!")
+            window.location.href = "/edituser"
+          }else {
+            alert("修改失败")
+          }
+          // alert("注册成功!")
+          // window.location.href = "/Login"
+        })
+      }
+      else
+      {
+        alert("两次密码不一致！")
+      }
+
+      //alert("用户名："+name+"密码："+password+"性别："+sex+"籍贯：" + nativeplace + "爱好：" +love);
+    }
+  </script>
+  <form action="/update" method="post">
+    <div class="logform">用户登录</div>
+    <div class="logleft">ID</div><div class="logright"><input class="input_box" id="id" name="id" th:value="${user.id}" readonly="readonly"></div>
+    <div class="logleft">用户名</div><div class="logright"><input type="text" id="name" name="name" th:value="${user.username}"></div>
+    <div class="logleft">密码</div><div class="logright"><input type="password" id="password01" name="password" th:value="${user.password}"></div>
+    <div class="logleft">确认密码</div><div class="logright"><input type="password" id="password02"></div>
+    <div class="logleft">性别</div><div class="logright">
+    <input type="radio" id="male" name="sex" value="男" checked="checked">男
+    <input type="radio" id="female" name="sex" value="女">女
+  </div>
+    <div class="logleft">籍贯</div><div class="logright">
+    <select name="nativeplace" id="native">
+      <option value="">请选择</option>
+      <option value="江苏">江苏</option>
+      <option value="浙江">浙江</option>
+      <option value="安徽">安徽</option>
+    </select>
+  </div>
+    <div class="logleft">爱好</div><div class="logright">
+    <input type="checkbox" value="上网" name="hobby">上网
+    <input type="checkbox" value="学习" name="hobby">学习
+    <input type="checkbox" value="唱歌" name="hobby" checked="checked">唱歌
+  </div>
+    <div class="logleft"></div><div class="logright">
+    <input type="submit" value="修改" onclick="updateData()">
+    <input type="button" value="返回" onclick = "javascript:history.back(-1);">
+    <!--            <a href="register">注册</a>-->
+  </div>
+  </form>
+
+
+</div>
+<!--3030213314李贺，登录 成功 ！！-->
+<div ></div>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}">title</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>-->
+<!--    <script src="https://unpkg.com/@popperjs/core@2"></script>-->
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-gXiI6yLy2LWzzzzePznwPUNBKbmUx73ijJRHE3CnYEjeSQuldGIITSofL0fP45sf" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/mhDoLbDldZc3qpsJHpLogda//BVZbgYuw6kof4u2FrCedxOtgRZDTHgHUhOCVim" crossorigin="anonymous"></script>
+</head>
+<body >
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+
+<!--      <div class="col-md-2 coLumn">-->
+<!--          <uL cLass="nav nav-pills nav-stacked" id="public_ Left">-->
+<!--              <Li cLass= "nav-header">分区一</li>-->
+<!--              <Li class="nav-link"><a href="#">模块一</a></li>-->
+<!--              <Li class="nav-link"><a href="#">模块二</a></li>-->
+<!--              <li cLass="nav-link"><a href="#">模块三</a></li>-->
+<!--              <Li cLass= "nav-header">分区二</li>-->
+<!--              <Li cLass="nav-link"><a href="#">文件 上传</a></1i>-->
+<!--              <Li cLass= "nav-link"><a href="#">文件 下载</a></1i>-->
+<!--              <Li class="nav-link"><a href="#">其它功能</a></li>-->
+<!--          </ul>-->
+<!--      </div>-->
+
+
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+<!--      <div class="dropdown">-->
+<!--          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--              Dropdown button-->
+<!--          </button>-->
+<!--          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">-->
+<!--              <li><a class="dropdown-item" href="#">Action</a></li>-->
+<!--              <li><a class="dropdown-item" href="#">Another action</a></li>-->
+<!--              <li><a class="dropdown-item" href="#">Something else here</a></li>-->
+<!--          </ul>-->
+<!--      </div>-->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li>
+              <a class="navbar-brand" href="#">
+                  <img src="../static/youku.png" alt="">
+              </a>
+          </li>
+          <li>
+              <a class="navbar-brand" href="/index">首页</a>
+          </li>
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link active" aria-current="page" href="#">用户名</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="#">注销</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <img src="../static/youku.png" alt="">-->
+<!--        </li>-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+            查询
+          </a>
+<!--            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--                Dropdown link-->
+<!--            </a>-->
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/search">查询演示</a></li>
+            <li><a class="dropdown-item" href="#">查询二</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">查询三</a></li>
+          </ul>
+<!--          <li class="dropdown">-->
+<!--              <a href="#" class="dropdown-toggle" data-toggle="dropdown">-->
+<!--                  Java-->
+<!--                  <b class="caret"></b>-->
+<!--              </a>-->
+<!--              <ul class="dropdown-menu">-->
+<!--                  <li><a href="#">jmeter</a></li>-->
+<!--                  <li><a href="#">EJB</a></li>-->
+<!--                  <li><a href="#">Jasper Report</a></li>-->
+<!--                  <li class="divider"></li>-->
+<!--                  <li><a href="#">分离的链接</a></li>-->
+<!--                  <li class="divider"></li>-->
+<!--                  <li><a href="#">另一个分离的链接</a></li>-->
+<!--              </ul>-->
+<!--          </li>-->
+<!--            <div class="dropdown">-->
+<!--                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--                    Dropdown button-->
+<!--                </button>-->
+<!--                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">-->
+<!--                    <li><a class="dropdown-item" href="#">Action</a></li>-->
+<!--                    <li><a class="dropdown-item" href="#">Another action</a></li>-->
+<!--                    <li><a class="dropdown-item" href="#">Something else here</a></li>-->
+<!--                </ul>-->
+<!--            </div>-->
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link " href = "/edituser">编辑</a>
+        </li>
+      </ul>
+<!--      <form class="d-flex" role="search">-->
+        <ul class=" navbar-nav d-flex" >
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#" th:text="'用户名 :' + ${session.currentuser}"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/Login">注销</a>
+        </li>
+<!--        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
+<!--        <button class="btn btn-outline-success" type="submit">Search</button>-->
+        </ul>
+<!--      </form>-->
+    </div>
+  </div>
+</nav>
+<div class="row clearfix">
+<div class="col-md-1 column">
+    <uL cLass="nav nav-pills nav-stacked" id="public_left">
+        <Li cLass="nav-header">分区一</li>
+        <Li class="nav-link"><a href="#">模块一</a></li>
+        <Li class="nav-link"><a href="#">模块二</a></li>
+        <li cLass="nav-link"><a href="#">模块三</a></li>
+        <Li cLass="nav-header">分区二</li>
+        <Li cLass="nav-link"><a href="#">文件上传</a></li>
+        <Li cLass="nav-link"><a href="#">文件下载</a></li>
+        <Li class="nav-link"><a href="#">其它功能</a></li>
+    </ul>
+
+<!--    <div class="col-md-10 column">-->
+<!--        <div id="public_right">-->
+<!--            <h2>-->
+<!--                这是publicpage.htmL内容-->
+<!--            </h2>-->
+<!--            <p>-->
+<!--                pubLic_ right, 这部分可根据所显示内容不同，动态调整。-->
+<!--            </p>-->
+<!--            <p>-->
+<!--                <a class="btn" href="#">Details >></a>-->
+<!--            </p>-->
+<!--        </div>-->
+<!--    </div>-->
+</div>
+<div class="col-md-10 column">
+    <div id="public_right" th:include="updateuser :: public_right">
+        <h2>
+            这是publicpage.htmL内容
+        </h2>
+        <p>
+            pubLic_ right, 这部分可根据所显示内容不同，动态调整。
+        </p>
+        <p>
+            <a class="btn" href="#">Details >></a>
+        </p>
+
+    </div>
+</div>
+</div>
+<div cLass="row clearfix">
+    <div class="col-md-12 column text-center">
+        <hr>
+        <p>
+            @2020-2021CopyRights 李贺
+        </p>
+        <p>
+            <a class="btn" href= "mailto: yangwi@wxit.edu.cn">联系我: 2572698701@qq.com</a>
+        </p>
+    </div>
+    </div>
+
+<!--<div class="col-md-10 column">-->
+<!--    <div id="public_right">-->
+<!--        <h2>-->
+<!--            这是publicpage.htmL内容-->
+<!--        </h2>-->
+<!--        <p>-->
+<!--            pubLic_ right, 这部分可根据所显示内容不同，动态调整。-->
+<!--        </p>-->
+<!--        <p>-->
+<!--            <a class="btn" href="#">Details >></a>-->
+<!--        </p>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--<li class="dropdown">-->
+<!--    <a href="#" class="dropdown-toggle" data-toggle="dropdown">-->
+<!--        Java-->
+<!--        <b class="caret"></b>-->
+<!--    </a>-->
+<!--    <ul class="dropdown-menu">-->
+<!--        <li><a href="#">jmeter</a></li>-->
+<!--        <li><a href="#">EJB</a></li>-->
+<!--        <li><a href="#">Jasper Report</a></li>-->
+<!--        <li class="divider"></li>-->
+<!--        <li><a href="#">分离的链接</a></li>-->
+<!--        <li class="divider"></li>-->
+<!--        <li><a href="#">另一个分离的链接</a></li>-->
+<!--    </ul>-->
+<!--</li>-->
+
+
+</body>
+</html>

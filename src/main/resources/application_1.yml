@@ -1,0 +1,61 @@
+#server:
+#  port:8090
+#spring:
+#  datasource:
+#    username: root
+#    password: 666888
+#    url: jdbc:mysql://localhost:3306/mytest?useUnicode=true&characterEncoding=utf-8&userSSL=true&serverTimezone=UTC
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#  messages:
+#    basename: i18n.login
+
+
+#server:
+#  port:8090
+#spring:
+#  datasource:
+#    username: root
+#    password: 666888
+#    url: jdbc:mysql://localhost:3306/schoolmates?useUnicode=true&characterEncoding=utf-8&userSSL=true&serverTimezone=UTC
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#  messages:
+#    basename: i18n.login
+
+
+
+server:
+  port:8090
+spring:
+  datasource:
+    username: root
+    password: 666888
+    url: jdbc:mysql://localhost:3306/schoolmates?useUnicode=true&characterEncoding=utf-8&userSSL=true&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  messages:
+    basename: i18n.login
+
+jpa:
+  hibernate:
+    naming:
+      physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+#mybatis:
+#  mapper-locations: classpath:mapper/UserInfoMapping.xml
+#  type-aliases-package: com.example.soft3.
+
+mybatis:
+#  mapper-locations: classpath:mapping/UserMapping.xml
+  mapper-locations: classpath:mapper/UserInfoMapping.xml
+  type-aliases-package: com.example.soft3.Model
+
+#  type: com.alibaba.druid.pool.DruidSource
+
+#server:
+#  port: 8080
+#spring:
+#  datasource:
+#    #type: com.alibaba.druid.pool.DruidDataSource #使用druid数据源，替换C3P0
+#    url: jdbc:mysql://localhost:3306/mytest?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai
+#    username: root
+#    password: root
+#    driver-class-name: com.mysql.cj.jdbc.Driver

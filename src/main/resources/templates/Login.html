@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/loginstyle.css" th:href="@{../static/css/loginstyle.css}"/>
+</head>
+
+<body>
+    <div id ="login">
+        <form action="/gologin" method="post">
+            <div class="login-form" th:text="#{login.tip}" >用户登录
+            </div>
+            <div class="login-input">
+                <span  th:text="#{login.username}">姓名：</span>
+                <input type="text" name="name">
+            </div>
+            <div class="login-input">
+                <span th:text="#{login.password}">密码：</span>
+                <input type="text" name="password">
+            </div>
+            <div class="login-input">
+                <input type="submit" value="登录"  th:value="#{login.login}">
+                <input type="reset" value="重置"  th:value="#{login.reset}">
+                <a href="../Register"  th:text="#{login.register}">注册</a>
+            </div>
+            <div class="loginput"><span th:text="${currentYear}">2019</span>
+            -<span th:text="${currentYear} + 1">2002</span>
+            <span>CopyRight</span>李贺</div>
+            <a class="btn btn-sm" th:href="@{/Login(l='zh_CN')}">中文</a>
+            <a class="btn btn-sm" th:href="@{/Login(l='en_US')}">English</a>
+        </form>
+    </div>
+</body>
+</html>

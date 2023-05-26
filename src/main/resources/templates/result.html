@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border="1">
+        <tbody>
+        <tr>
+            <td>Id</td>
+            <td>Username</td>
+            <td>Password</td>
+            <td>Sex</td>
+            <td>Nativeplace</td>
+            <td>Hobby</td>
+        </tr>
+<!--        <tr th:each="User:${Result}">-->
+<!--            <td th:text="${User.id}"></td>-->
+<!--            <td th:text="${User.username}"></td>-->
+<!--            <td th:text="${User.password}"></td>-->
+<!--            <td th:text="${User.sex}"></td>-->
+<!--            <td th:text="${User.nativeplace}"></td>-->
+<!--            <td th:text="${User.hobby}"></td>-->
+<!--        </tr>-->
+        <tr th:each="User:${Result}">
+            <td th:text="${User.id}"></td>
+            <td th:text="${User.userName}"></td>
+            <td th:text="${User.password}"></td>
+            <td th:text="${User.sex}"></td>
+            <td th:text="${User.nativePlace}"></td>
+            <td th:text="${User.hobby}"></td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>

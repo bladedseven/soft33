@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace = "com.example.soft3.Mapper.UserInfoMapper">
+    <select id = "findUserInfoList" resultType = "UserInfo">
+        select * from userinfo
+    </select>
+    <select id = "login" resultType = "UserInfo">
+        select * from userinfo where username = #{username} and password = #{password}
+    </select>
+    <select id="findByid" resultType="UserInfo">
+        select * from userinfo where id = #{id}
+    </select>
+    <select id="findUsername" resultType="UserInfo">
+        select * from userinfo where username = #{username}
+    </select>
+
+    <select id = "find_userinfo_by_name_Servic" resultType = "UserInfo">
+        select * from userinfo where username = #{username}
+    </select>
+    <insert id = "user_Register_Servic" parameterType = "UserInfo" useGeneratedKeys = "true" keyProperty = "id">
+        insert into userinfo(username, password, sex, nativeplace, hobby) values(#{username}, #{password}, #{sex}, #{nativeplace}, #{hobby});
+    </insert>
+    <delete id = "deleteUserInfo" parameterType = "UserInfo">
+        delete from userinfo where id = #{id}
+    </delete>
+    <select id="findbyidd" resultType="UserInfo">
+        select * from userinfo where id = #{id}
+    </select>
+    <update id="updateUserInfoById" parameterType="UserInfo">
+        update userinfo set username = #{username}, password = #{password}, sex = #{sex}, nativeplace = #{nativeplace}, hobby = #{hobby} where id = #{id};
+    </update>
+</mapper>
